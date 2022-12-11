@@ -1,5 +1,6 @@
 import 'package:app_bmi/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage({super.key, required this.result});
@@ -129,7 +130,17 @@ class ResultPage extends StatelessWidget {
               ],
             ),
             Center(
-              child: Text('Category'),
+              child: Container(
+                width: 500,
+                height: 300,
+                child: Column(
+                  children: [
+                    Text('Masih dalam tahap develope !'),
+                    LottieBuilder.network(
+                        'https://assets7.lottiefiles.com/packages/lf20_3ejhEJ/over/data.json'),
+                  ],
+                ),
+              ),
             ),
           ]),
         ),
