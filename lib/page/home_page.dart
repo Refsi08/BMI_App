@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var isClickMale = true;
+  var isClickFemale = true;
   int number = 160;
   int numberWeight = 50;
   int numberAge = 10;
@@ -66,66 +68,82 @@ class _HomePageState extends State<HomePage> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            margin: EdgeInsets.all(20),
-            height: 150,
-            width: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: containerColor,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  spreadRadius: 5,
-                  blurRadius: 5,
-                  offset: Offset.fromDirection(-2, -6),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Icon(
-                  Icons.male,
-                  color: whiteColor,
-                  size: 100,
-                ),
-                Text(
-                  'MALE',
-                  style: primaryTextstyle.copyWith(
-                      fontSize: 20, fontWeight: FontWeight.w700),
-                ),
-              ],
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                isClickMale = !isClickMale;
+              });
+            },
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 100),
+              margin: EdgeInsets.all(20),
+              height: isClickMale ? 150 : 160,
+              width: isClickMale ? 150 : 160,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: isClickMale ? containerColor : secondaryColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset.fromDirection(-2, -6),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.male,
+                    color: whiteColor,
+                    size: 100,
+                  ),
+                  Text(
+                    'MALE',
+                    style: primaryTextstyle.copyWith(
+                        fontSize: 20, fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(20),
-            height: 150,
-            width: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: containerColor,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  spreadRadius: 5,
-                  blurRadius: 5,
-                  offset: Offset.fromDirection(-2, -6),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Icon(
-                  Icons.female,
-                  color: whiteColor,
-                  size: 100,
-                ),
-                Text(
-                  'FEMALE',
-                  style: primaryTextstyle.copyWith(
-                      fontSize: 20, fontWeight: FontWeight.w700),
-                ),
-              ],
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                isClickFemale = !isClickFemale;
+              });
+            },
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 100),
+              margin: EdgeInsets.all(20),
+              height: isClickFemale ? 150 : 160,
+              width: isClickFemale ? 150 : 160,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: isClickFemale ? containerColor : secondaryColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    spreadRadius: 5,
+                    blurRadius: 5,
+                    offset: Offset.fromDirection(-2, -6),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Icon(
+                    Icons.female,
+                    color: whiteColor,
+                    size: 100,
+                  ),
+                  Text(
+                    'FEMALE',
+                    style: primaryTextstyle.copyWith(
+                        fontSize: 20, fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
             ),
           )
         ],
