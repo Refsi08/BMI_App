@@ -1,7 +1,6 @@
 import 'package:app_bmi/page/result_page.dart';
 import 'package:app_bmi/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
